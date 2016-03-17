@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<div class="row header">
+    <header id="header">
+      <div id="profile-image"></div>
+      <div id="details">
+        <h1>Matt Fannin</h1>
+        <h2>A multidisciplinary design portfolio.</h1>
+        <div id="channels">
+          <a target="_blank" href="https://github.com/bluefantail" id="github"></a>
+          <a href="mailto:mattfannin@acidic.co.nz" id="email"></a>
+          <a target="_blank" href="https://www.flickr.com/photos/mfannin/" id="flickr"></a>
+          <div></div>
+        </div>
+      </div>
+    </header>
+    <div id="about">
+      <div>
+        <h4>About my work</h4>
+        <p>Info about work.</p>
+      </div>
+    </div>
+    <div id="about-button">More</div>
+</div>
+<div class="row">
+  <div class="two columns">
+    <nav>
+      <ul>
+        <li><a id="#web" href="#web" class="active">Web</a></li>
+        <li><a id="#graphic" href="#graphic">Graphic</a></li>
+        <li><a id="#print" href="#print">Print</a></li>
+        <li><a id="#drawing" href="#drawing">Drawing & Painting</a></li>
+        <li><a id="#game" href="#game">Game</a></li>
+        <!-- <li><a id="#photography" href="#photography">Photography</a></li> -->
+        <!-- <li><a id="#film" href="#film">Film</a></li> -->
+      </ul>
+    </nav>
+  </div>
+  <div class="ten columns">
+    <div id="sections">
+      <section id="web" class="hide shrink">
+        {% include web.html %}
+      </section>
+      <section id="graphic" class="hide shrink">
+        {% include graphic.html %}
+      </section>
+      <section id="print" class="hide shrink">
+        {% include print.html %}
+      </section>
+      <section id="drawing" class="hide shrink">
+        {% include drawing.html %}
+      </section>
+      <section id="game" class="hide shrink">
+        <h3>Game</h1>
+        {% include game.html %}
+      </section>
+      <section id="photography" class="hide shrink">
+        <h3>Photography</h1>
+        <p>
+          Photography stuff.
+        </p>
+      </section>
+      <section id="film" class="hide shrink">
+        <h3>Film</h1>
+        <p>
+          Film stuff.
+        </p>
+      </section>
+    </div>
+  </div>
+</div>

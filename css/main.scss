@@ -1,0 +1,288 @@
+---
+---
+@charset "utf-8";
+
+// Skeleton Variable Overrides
+// Breakpoint overrides
+// $bp-larger-than-mobile    : "min-width: 400px";
+// $bp-larger-than-phablet   : "min-width: 550px";
+// $bp-larger-than-tablet    : "min-width: 750px";
+// $bp-larger-than-desktop   : "min-width: 1000px";
+// $bp-larger-than-desktophd : "min-width: 1200px";
+// Color overrides
+// $light-grey: #e1e1e1;
+// $dark-grey: #333;
+// $primary-color: #33c3f0;
+// $secondary-color: lighten($dark-grey, 13.5%);
+// $border-color: #bbb;
+// $link-color: #1eaedb;
+// $font-color: #222;
+// Typography overrides
+$font-family: 'Roboto', sans-serif;
+//Grid Variable overrides
+$container-width: 1200px;
+$container-width-larger-than-mobile: 100%;
+$container-width-larger-than-phablet: 100%;
+// $total-columns: 12;
+// $column-width: 100 / $total-columns;
+$column-margin: 3%;
+// Misc overrides
+// $global-radius: 4px;
+// Get Skeleton
+@import "skeleton";
+// Page style
+// Mixins
+@mixin animate($duration: 0.2s){
+	-webkit-transition: all $duration ease-in-out;
+	-moz-transition: all $duration ease-in-out;
+	-o-transition: all $duration ease-in-out;
+	transition: all $duration ease-in-out;
+}
+@mixin animate_content($duration: 0.2s){
+	-webkit-transition:
+		opacity $duration ease-in-out, visibility $duration ease-in-out, max-height 0s ease-in-out 0s;
+	-moz-transition: 
+		opacity $duration ease-in-out, visibility $duration ease-in-out, max-height 0s ease-in-out 0s;
+	-o-transition: 
+		opacity $duration ease-in-out, visibility $duration ease-in-out, max-height 0s ease-in-out 0s;
+	transition: 
+		opacity $duration ease-in-out, visibility $duration ease-in-out, max-height 0s ease-in-out 0s;
+}
+@mixin animate_content_delay($duration: 0.2s){
+	transition-delay: 0s, 0s, $duration;
+	-moz-transition-delay: 0s, 0s, $duration;
+	-o-transition-delay: 0s, 0s, $duration;
+	-webkit-transition-delay: 0s, 0s, $duration;
+}
+.container{
+	box-sizing: border-box;
+	padding: 1.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-weight: 400;
+}
+h1{
+	font-weight: 700;
+}
+a{
+	text-decoration: none;
+}
+p{
+	margin: 1rem 0 1rem 0;
+}
+nav{
+	padding: 7.5rem 0 1rem 0;
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	ul{
+	float: left;
+	width: 100%;
+		list-style: none;
+		li{
+			float: right;
+			clear: both;
+			a{
+				float: left;
+				padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+				box-sizing: brder-box;
+				@include animate(0.1s);
+				text-align: right;
+			}
+			a:hover,
+			a.active{
+				background-color: $primary-color;
+				color: #fff;
+			}
+		}
+	}
+}
+header{
+	height: 250px;
+	width: 100%;
+	float: left;
+	background-color: #eee;
+	display: table;
+	position: relative;
+	@include animate;
+}
+.header{
+	margin-bottom: 3rem;
+	position: relative;
+}
+#profile-image{
+	background-color:  #eee;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+	width: 250px;
+	background-image: url('http://www.gravatar.com/avatar/2c2cfffb1629cf6dd03f32e1644553ea.jpg?s=1000');
+	background-size: cover;
+}
+#details{
+	box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 0 0 5rem;
+	#channels{
+		a{
+			width: 3rem;		
+			height: 3rem;	
+			float: left;
+			margin-right: 2rem;
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			opacity: 0.7;
+			position: relative;
+			@include animate;
+		}
+		a:hover,
+		a:hover:after{
+			opacity: 1;
+			visibility: visible;
+		}
+		a:after{
+			background-color: #111;
+			position: absolute;
+			top: 4.5rem;
+			padding: 0.4rem 1rem 0.4rem 1rem;
+			left: -0.7rem;
+			color: #eee;
+			font-weight: 300;
+			border-radius: 2px;
+			font-size: 1.2rem;
+			opacity: 0;
+			visibility: hidden;
+			display: block;
+			@include animate;
+			white-space: pre;
+		}
+		#github{
+			background-image: url('../required/images/github.svg');
+		}
+		#github:after{
+				content: "Github Profile";
+		}
+		#flickr{
+			background-image: url('../required/images/flickr.svg');
+		}
+		#flickr:after{
+				content: "Flickr Photostream";
+		}
+		#email{
+			background-image: url('../required/images/gmail.png');
+		}
+		#email:after{
+				content: "Email";
+		}
+	}
+}
+#about{
+	float: left;
+	width: 100%;
+	background-color: #eee;
+	box-sizing: border-box;
+	height: 0px;
+	overflow: hidden;
+	@include animate(0.4s);
+	div{
+		padding: 5rem;
+		width: 100%;
+		float: left;
+	}
+}
+#sections{
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 1rem 0 5rem 0;
+	box-sizing: border-box;
+}
+#about-button{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+	background-color: #ddd;
+	cursor: pointer;
+	@include animate(0.1s);
+	&:hover{
+		background-color: $primary-color;
+		color: #fff;
+	}
+}
+section{
+	position: absolute;
+	width: 100%;
+	max-height: 1000000px;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 0 5px 0 5px;
+	@include animate_content;
+}
+.project{
+	width: 100%;
+	float: left;
+	background-color: #eee;
+	box-shadow: 0px 0px 5px #aaa;
+	box-sizing: border-box;
+	padding: 5rem;
+	margin-bottom: 2rem;
+	color: #666;
+	@include animate;
+	.image{
+		width: 100%;
+		padding-bottom: 60%;
+		background-size: cover;
+		background-position: center center;
+		margin-top: 2rem;
+		float: left;
+		box-shadow: 0px 2px 8px #bbb;
+	}
+	.web{
+		padding-bottom: 56% !important;
+	}
+	a{
+		padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+		margin-right: 0.5rem;
+		border-radius: 2px;
+		@include animate(0.1s);
+		&:hover{
+			background-color: #ddd;
+		}
+	}
+	h4{
+		float: left;
+		margin-right: 2rem;
+	}
+	p{
+		clear: both;
+	}
+	code{
+		margin-left: 1rem;
+		margin-top: 0.7rem;
+		float: left;
+		background-color: #fafafa;
+		@include animate;
+		&:hover{
+			background-color: #fff;
+		}
+	}
+}
+
+.hide{
+	opacity: 0;
+	visibility: hidden;
+}
+.shrink{
+	max-height: 0px !important;
+	@include animate_content_delay;
+}

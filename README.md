@@ -1,1 +1,3 @@
-# portfolio
+# Portfolio
+
+A multidisciplinary design portfolio.
