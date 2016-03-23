@@ -17,23 +17,36 @@ layout: default
     </header>
     <div id="about">
       <div>
-        <h4>About my work</h4>
-        <p>Info about work.</p>
+        <h4>About me</h4>
+        <p>
+          Being a designer can be kind of tricky to explain. 
+        </p>
+        <p>
+         This portfolio is currently my best attempt to pool together the knowledge and experience gained by exploring many areas of design. 
+        </p>
+        <p>
+          To me, design is as much about asking the crucial questions as it is about getting in and making something. This dual thinking / doing nature is what makes design so interesting to me. While I’m greatly concerned with visual aesthetic, I’m equally as eager to dive deep into some serious technical learning.
+        </p>
+        <p>
+          For these reasons, my practice has led me to develop skills as a design generalist, proficient front end developer, and all-round technical person. I love combining many different disciplines into meaningful designs. 
+        </p>
+        <p>
+          This added perspective gives me an edge in bridging the gap between an idea and a real product. For example, if I’m creating a web layout, my extensive experience with HTML and CSS, and recent Javascript learning, means I know how that design is likely to be translated into something that works in a web browser.
+        </p>
       </div>
     </div>
-    <div id="about-button">More</div>
+    <div id="about-button">About Me</div>
 </div>
 <div class="row">
   <div class="two columns">
     <nav>
       <ul>
         <li><a id="#web" href="#web" class="active">Web</a></li>
-        <li><a id="#graphic" href="#graphic">Graphic</a></li>
-        <li><a id="#print" href="#print">Print</a></li>
-        <li><a id="#drawing" href="#drawing">Drawing & Painting</a></li>
+        <li><a id="#graphic" href="#graphic">Graphic & Print</a></li>
+        <li><a id="#film" href="#film">Film & Theatre</a></li>
+        <li><a id="#photography" href="#photography">Photography</a></li>
         <li><a id="#game" href="#game">Game</a></li>
-        <!-- <li><a id="#photography" href="#photography">Photography</a></li> -->
-        <!-- <li><a id="#film" href="#film">Film</a></li> -->
+        <li><a id="#art" href="#art">Art</a></li>
       </ul>
     </nav>
   </div>
@@ -45,27 +58,18 @@ layout: default
       <section id="graphic" class="hide shrink">
         {% include graphic.html %}
       </section>
-      <section id="print" class="hide shrink">
-        {% include print.html %}
-      </section>
-      <section id="drawing" class="hide shrink">
-        {% include drawing.html %}
+      <section id="art" class="hide shrink">
+        {% include art.html %}
       </section>
       <section id="game" class="hide shrink">
         <h3>Game</h1>
         {% include game.html %}
       </section>
       <section id="photography" class="hide shrink">
-        <h3>Photography</h1>
-        <p>
-          Photography stuff.
-        </p>
+        {% include photography.html %}
       </section>
       <section id="film" class="hide shrink">
-        <h3>Film</h1>
-        <p>
-          Film stuff.
-        </p>
+        {% include film.html %}
       </section>
     </div>
   </div>
