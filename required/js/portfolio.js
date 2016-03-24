@@ -13,12 +13,24 @@ function handle_click(e){
 			document.querySelector('section#' + id).className = '';
 			document.querySelector('nav a.active').classList.remove('active');
 			e.currentTarget.classList.add('active');
-			arrow.classList.remove('spin');
-			navInner.style.height = '0px';
+			// arrow.classList.remove('spin');
+			// navInner.style.height = '0px';
+			// var dist = from_top(document.querySelector('#sections'));
 			window.scroll(0,0);
 			break;
 	}
 }
+function from_top(element) {
+			var top = 0;
+			do {
+				top += element.offsetTop || 0;
+				element = element.offsetParent;
+				// console.log(element);
+				// console.log(top);
+			} while (element);
+
+			return top;
+		};
 function stop_propigation(e){
 	e.stopPropagation();
 }
@@ -66,7 +78,7 @@ var nav = document.querySelector('nav');
 var navInner = nav.querySelector('ul');
 
 var openNav = document.querySelector('#open-nav');
-	openNav.addEventListener('click', toggle_nav);
+	// openNav.addEventListener('click', toggle_nav);
 var arrow = openNav.querySelector('div');
 
 
