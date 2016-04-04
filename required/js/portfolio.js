@@ -13,10 +13,17 @@ function handle_click(e){
 			document.querySelector('section#' + id).className = '';
 			document.querySelector('nav a.active').classList.remove('active');
 			e.currentTarget.classList.add('active');
-			// arrow.classList.remove('spin');
-			// navInner.style.height = '0px';
-			// var dist = from_top(document.querySelector('#sections'));
-			window.scroll(0,0);
+			menuText.textContent = e.currentTarget.textContent;
+			
+			var dist = from_top(document.querySelector('#sections'));
+			console.log(dist);
+			window.scroll(0,dist);
+			
+			var stickyNav = getComputedStyle(nav).getPropertyValue('position') == 'fixed' ? true : false;
+			if (stickyNav) {
+				menuArrow.classList.remove('spin');
+				navInner.style.height = '0px';
+			}
 			break;
 	}
 }
@@ -42,7 +49,7 @@ function toggle_nav(e){
 	var innerHeight = navInner.scrollHeight + 'px';
 	var currentHeight = navInner.offsetHeight;
 	currentHeight ? navInner.style.height = '0px' : navInner.style.height = innerHeight;
-	arrow.classList.toggle('spin');
+	menuArrow.classList.toggle('spin');
 }
 
 var navItems = document.querySelectorAll('nav a');
@@ -78,8 +85,9 @@ var nav = document.querySelector('nav');
 var navInner = nav.querySelector('ul');
 
 var openNav = document.querySelector('#open-nav');
-	// openNav.addEventListener('click', toggle_nav);
-var arrow = openNav.querySelector('div');
+	openNav.addEventListener('click', toggle_nav);
+var menuArrow = openNav.querySelector('#menu-arrow');
+var menuText = openNav.querySelector('#menu-text');
 
 
 sectionElements[0].className = '';

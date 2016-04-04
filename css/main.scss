@@ -5,7 +5,7 @@
 // Skeleton Variable Overrides
 // Breakpoint overrides
 // $bp-larger-than-mobile    : "min-width: 400px";
-// $bp-larger-than-phablet   : "min-width: 550px";
+$bp-larger-than-phablet   : "min-width: 700px";
 // $bp-larger-than-tablet    : "min-width: 750px";
 // $bp-larger-than-desktop   : "min-width: 1000px";
 // $bp-larger-than-desktophd : "min-width: 1200px";
@@ -78,6 +78,9 @@ h6{
 h1{
 	font-weight: 700;
 }
+h4{
+	margin-bottom: 0;
+}
 a{
 	text-decoration: none;
 }
@@ -127,13 +130,29 @@ nav{
 		cursor: pointer;
 		padding: 0.8rem 0 0.8rem 0;
 		display: none;
-		div{
-			height: 3.5rem;
-			width: 3.5rem;
+		#menu-arrow{
+			height: 3.2rem;
+			width: 3.2rem;
 			margin: 0px auto;
 			background: url(../required/images/arrow.svg) center center no-repeat;
 			background-size: contain; 
-			@include animate(0.4s);
+			@include animate(0.2s);
+			float: right;
+			margin-right: 2rem;
+		}
+		#menu-text{
+			float: left;
+			text-align: left;
+			font-weight: 400;
+			color: #fff;
+			height: 100%;
+			font-size: 2.1rem;
+			display: table;
+			margin: 0 0 0 2rem;
+			div{
+				display: table-cell;
+				vertical-align: middle;
+			}
 		}
 	}
 }
@@ -144,7 +163,7 @@ nav{
 	nav{
 		position: fixed;
 		padding: 0;
-		top: 0;
+		bottom: 0;
 		left: 0;
 		z-index: 9;
 		background-color: #fff;
@@ -178,11 +197,6 @@ header{
 .header{
 	margin-bottom: 3rem;
 	position: relative;
-}
-@media(max-width: 700px){
-	header{
-		margin-top: 5rem;
-	}
 }
 #profile-image{
 	background-color:  #eee;
@@ -312,7 +326,7 @@ header{
 }
 @media(max-width: 500px){
 	#details{
-		padding: 2rem 2rem 6rem 2rem;
+		padding: 2rem 2rem 4rem 2rem;
 		display: block;
 		float: left;
 	}
@@ -451,6 +465,7 @@ section{
 		padding: 0.4rem 0.8rem 0.4rem 0.8rem;
 		margin-right: 0.5rem;
 		border-radius: 2px;
+		float: left;
 		@include animate(0.1s);
 		&:hover{
 			background-color: #ddd;
@@ -462,11 +477,14 @@ section{
 	}
 	p{
 		clear: both;
+		float: left;
+		&:first-of-type{
+			margin-top: 2rem;
+		}
 	}
 	code{
-		margin-left: 1rem;
-		margin-top: 0.7rem;
 		float: left;
+		margin: 0.6rem 1rem 0 0;
 		background-color: #fafafa;
 		@include animate;
 		&:hover{
