@@ -5,6 +5,7 @@ function handle_click(e){
 	  		var innerHeight = aboutSection.scrollHeight + 'px';
 	  		var currentHeight = aboutSection.offsetHeight;
 	  		currentHeight ? aboutSection.style.height = '0px' : aboutSection.style.height = innerHeight;
+	  		aboutButton.querySelector('[class^=arr-]').classList.toggle('arr-up');
 			break;
 		default:
 			e.preventDefault();
