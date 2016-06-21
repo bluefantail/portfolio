@@ -17,3 +17,5 @@ github_username:  bluefantail
 
 # Build settings
 markdown: kramdown
+
+exclude: ['Gemfile', 'Gemfile.lock', 'package.json', 'README.md']
