@@ -1,3 +1,5 @@
+smoothScroll.init();
+
 function handle_click(e){
 	switch (e.currentTarget.id){
 		case 'about-button':
@@ -16,9 +18,7 @@ function handle_click(e){
 			e.currentTarget.classList.add('active');
 			menuText.textContent = e.currentTarget.textContent;
 			
-			var dist = from_top(document.querySelector('#sections'));
-			console.log(dist);
-			window.scroll(0,dist);
+			smoothScroll.animateScroll( '#sections' );
 			
 			var stickyNav = getComputedStyle(nav).getPropertyValue('position') == 'fixed' ? true : false;
 			if (stickyNav) {
@@ -28,17 +28,15 @@ function handle_click(e){
 			break;
 	}
 }
-function from_top(element) {
-			var top = 0;
-			do {
-				top += element.offsetTop || 0;
-				element = element.offsetParent;
-				// console.log(element);
-				// console.log(top);
-			} while (element);
+function fromTop(elem) {
+    var top = 0;
+    do {
+        top += elem.offsetTop || 0;
+        elem = elem.offsetParent;
+    } while (elem);
 
-			return top;
-		};
+    return top;
+};
 function stop_propigation(e){
 	e.stopPropagation();
 }
@@ -89,7 +87,6 @@ var openNav = document.querySelector('#open-nav');
 	openNav.addEventListener('click', toggle_nav);
 var menuArrow = openNav.querySelector('#menu-arrow');
 var menuText = openNav.querySelector('#menu-text');
-
 
 sectionElements[0].className = '';
 

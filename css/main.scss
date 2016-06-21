@@ -518,6 +518,10 @@ section{
 	max-height: 0px !important;
 	@include animate_content_delay;
 }
+.stick{
+	position: fixed;
+	box-shadow: 0 -1px 8px #666;
+}
 
 [class^=arr-]{  /* Arrows @RCB */
   border:       solid currentColor;
