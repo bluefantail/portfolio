@@ -256,45 +256,17 @@ header{
 			position: relative;
 			@include animate;
 		}
-		a:hover,
-		a:hover:after{
+		a:hover{
 			opacity: 1;
-			visibility: visible;
-		}
-		a:after{
-			background-color: #111;
-			position: absolute;
-			top: 4.5rem;
-			padding: 0.4rem 1rem 0.4rem 1rem;
-			left: -0.7rem;
-			color: #eee;
-			font-weight: 300;
-			border-radius: 2px;
-			font-size: 1.2rem;
-			opacity: 0;
-			visibility: hidden;
-			display: block;
-			z-index: 7;
-			@include animate;
-			white-space: pre;
 		}
 		#github{
 			background-image: url('../required/images/github.svg');
 		}
-		#github:after{
-				content: "Github Profile";
-		}
 		#flickr{
 			background-image: url('../required/images/flickr.svg');
 		}
-		#flickr:after{
-				content: "Flickr Photostream";
-		}
 		#email{
 			background-image: url('../required/images/gmail.png');
-		}
-		#email:after{
-				content: "Email";
 		}
 	}
 }
@@ -534,3 +506,48 @@ section{
 }
 .arr-up    {transform:rotate(-135deg) !important;}
 .arr-down  {transform:rotate(45deg);}
+
+/* Tooltips */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+  transition: 0.6s ease-in-out;
+}
+
+[data-tooltip]:before {
+  content: "";
+  height: 0;
+  width: 0;
+  top: calc(100% - 2px);
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent #333 transparent;
+}
+
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  white-space: nowrap;
+  background-color: #111;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  top: calc(100% + 18px);
+  border-radius: 2px;
+  color: #eee;
+  text-shadow: 0px 1px 1px #000;
+  font-weight: 300;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease-in-out;
+}

@@ -1,0 +1,1 @@
+scp -r ./_site/* sodalite.acidic.co.nz:/sites/matt.acidic.co.nz/public
